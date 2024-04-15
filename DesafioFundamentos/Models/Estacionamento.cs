@@ -1,23 +1,26 @@
+using System.Text.RegularExpressions;
+
 namespace DesafioFundamentos.Models
 {
-    public class Estacionamento
+    public class Estacionamento(decimal precoInicial, decimal precoPorHora)
     {
-        private readonly decimal precoInicial = 0;
-        private readonly decimal precoPorHora = 0;
-        private readonly List<string> veiculos = new();
-
-        public Estacionamento(decimal precoInicial, decimal precoPorHora)
-        {
-            this.precoInicial = precoInicial;
-            this.precoPorHora = precoPorHora;
-        }
+        private readonly decimal precoInicial = precoInicial;
+        private readonly decimal precoPorHora = precoPorHora;
+        private readonly List<string> veiculos = [];
 
         public void AdicionarVeiculo()
         {
             // Implementado!!!!!
             Console.WriteLine("Digite a placa do veículo para estacionar:");
             string placa = Console.ReadLine();
-            veiculos.Add(placa);
+            if(IsValidPlate(placa)){
+                veiculos.Add(placa);
+            }
+            else
+            {
+                Console.WriteLine("Esta placa não é valida. ");
+            }
+
         }
 
         public void RemoverVeiculo()
@@ -65,6 +68,13 @@ namespace DesafioFundamentos.Models
             {
                 Console.WriteLine("Não há veículos estacionados.");
             }
+        }
+
+
+        private static bool IsValidPlate(string placa)
+        {
+            string pattern = @"^[A-Z]{3}\d[A-Z]\d{2}$";
+            return Regex.IsMatch(placa, pattern);
         }
     }
 }
