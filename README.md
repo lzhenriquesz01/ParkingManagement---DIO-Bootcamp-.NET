@@ -37,7 +37,7 @@ Por último, deverá ser feito um menu interativo com as seguintes ações imple
 ## Minhas Adições/Alterações
 1. Eu implementei um metodo de verificação de uma placa valida. O metodo **IsValidPlate()** faz a verificação da placa conforme um padrão regular (regex).
 
-2. Nesse mesmo caminho de validação,eu implentei uma validação nos campos **preçoInicial** e **precoHora**. Antes,eles aceitavem qualquer valores menores que zero ou se caso nada fosse digitado daria um erro.
+2. Nesse mesmo caminho de validação,eu implentei uma validação nos campos **preçoInicial** e **precoPorHora**. Antes,eles aceitavem qualquer valores menores ou ate o proprio zero,se caso nada fosse digitado retornaria um erro.
 
 ## Solução
 O código está pela metade, e você deverá dar continuidade obedecendo as regras, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
